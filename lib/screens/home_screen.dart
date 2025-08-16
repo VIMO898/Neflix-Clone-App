@@ -72,7 +72,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final _generalScreens = [
+    final generalScreens = [
       HomeDrawerScreenInfoModel(
         title: 'Discover',
         icon: Icons.rocket_outlined,
@@ -121,7 +121,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         isDedicatedScreen: true,
       ),
     ];
-    final _userScreens = [
+    final userScreens = [
       HomeDrawerScreenInfoModel(
         title: 'Favourites',
         icon: Icons.favorite_outline,
@@ -170,8 +170,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               // ========
               //   General
               // ========
-              ...List.generate(_generalScreens.length, (index) {
-                final screenInfo = _generalScreens[index];
+              ...List.generate(generalScreens.length, (index) {
+                final screenInfo = generalScreens[index];
                 return HomeDrawerTile(
                   title: screenInfo.title,
                   icon: screenInfo.icon,
@@ -183,8 +183,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               //   User
               // ========
               _buildTilesCategoryTitle('User', theme),
-              ...List.generate(_userScreens.length, (index) {
-                final screenInfo = _userScreens[index];
+              ...List.generate(userScreens.length, (index) {
+                final screenInfo = userScreens[index];
                 return HomeDrawerTile(
                   title: screenInfo.title,
                   icon: screenInfo.icon,
